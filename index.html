@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./i.css" />
+    <link
+      href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+    <script>
+      $(function () {
+        $("#imageListId").sortable({
+          update: function (event, ui) {
+            getIdsOfImages();
+          }, //end update
+        });
+      });
+
+      function getIdsOfImages() {
+        var values = [];
+        $(".listitemClass").each(function (index) {
+          values.push($(this).attr("id").replace("imageNo", ""));
+        });
+        $("#outputvalues").val(values);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="height"></div>
+    <br />
+    <span id="imageListId">
+      <div id="imageNo1" class="listitemClass">
+        <img
+          src="https://images.unsplash.com/photo-1610878180933-123728745d22?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FuYWRhJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+          alt=""
+        />
+      </div>
+
+      <div id="imageNo2" class="listitemClass">
+        <img
+          src="https://gardeningtips.in/wp-content/uploads/2022/08/Secret-Power-of-Nature1-1024x683.jpg"
+          alt=""
+        />
+      </div>
+
+      <div id="imageNo3" class="listitemClass">
+        <img
+          src="https://thumbs.dreamstime.com/b/hand-holding-glass-globe-ball-tree-growing-green-nature-blur-background-eco-concept-161081206.jpg"
+          alt=""
+        />
+      </div>
+
+      <!--  -->
+
+      <div id="imageNo5" class="listitemClass">
+        <img
+          src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014__340.jpg"
+          alt=""
+        />
+      </div>
+      <div id="imageNo4" class="listitemClass">
+        <img src="https://wallpapercave.com/wp/u9AVLry.jpg" alt="" />
+      </div>
+
+      <div id="imageNo6" class="listitemClass">
+        <img
+          src="https://1.bp.blogspot.com/-kK7Fxm7U9o0/YN0bSIwSLvI/AAAAAAAACFk/aF4EI7XU_ashruTzTIpifBfNzb4thUivACLcBGAsYHQ/s1280/222.jpg"
+          alt=""
+        />
+      </div>
+    </span>
+  </body>
+</html>
